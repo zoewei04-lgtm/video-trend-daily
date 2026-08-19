@@ -30,7 +30,7 @@
     .platform-summary{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}.platform-summary span{font-size:12px;background:#e8eeeb;border:1px solid #d3dcda;border-radius:3px;padding:3px 7px;color:#405058}
     .date-block{border:1px solid var(--line);border-radius:7px;background:#fff;overflow:hidden}.date-block>summary{cursor:pointer;list-style:none;display:flex;gap:10px;align-items:center;padding:13px 15px;background:#edf0ec;border-bottom:1px solid var(--line)}.date-block>summary::-webkit-details-marker{display:none}
     .date-chip{background:#c34f32;color:#fff;border-radius:4px;padding:4px 9px;font-weight:750;white-space:nowrap}.date-meta{color:var(--muted);font-size:12px}
-    .date-content{padding:0 14px 18px}.section-head{display:flex;gap:8px;align-items:center;margin:21px 0 9px}.section-head h3{font-size:18px}.count{font-size:12px;color:#fff;border-radius:3px;padding:2px 7px}.count.paid{background:var(--paid)}.count.organic{background:var(--organic)}
+    .date-content{padding:0 14px 18px}.market-section{padding:20px 0 5px;border-top:1px solid var(--line)}.market-section:first-child{border-top:0}.market-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:2px}.market-title h3{font-size:20px}.market-name{display:inline-block;margin-right:8px;padding:3px 8px;border-radius:3px;background:var(--ink);color:#fff;font-size:12px;vertical-align:2px}.market-name.tw{background:#24735d}.market-name.hk{background:#255d8d}.market-total{color:var(--muted);font-size:12px;white-space:nowrap}.section-head{display:flex;gap:8px;align-items:center;margin:15px 0 9px}.section-head h4{font-size:16px;margin:0}.count{font-size:12px;color:#fff;border-radius:3px;padding:2px 7px}.count.paid{background:var(--paid)}.count.organic{background:var(--organic)}
     .list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
     .item{border:1px solid var(--line);border-left:5px solid var(--paid);background:#fff;border-radius:6px;padding:14px;min-width:0}.item.organic{border-left-color:var(--organic)}
     .item-top{display:flex;gap:9px;align-items:flex-start}.num{width:30px;height:30px;display:grid;place-items:center;background:#f2e8e4;color:#8f3924;border-radius:4px;font-weight:800;flex:0 0 auto}.organic .num{background:#e3f0eb;color:#1f674f}
@@ -39,7 +39,6 @@
     .actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;border:1px solid #aeb9b5;background:#fff;color:var(--ink);border-radius:4px;padding:6px 9px;text-decoration:none;cursor:pointer}.btn.primary{background:var(--ink);border-color:var(--ink);color:#fff}.btn:hover{filter:brightness(.96)}
     .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;margin-top:10px}.detail{min-width:0}.detail b{font-size:12px;color:#4f5a60}.detail p{margin:2px 0 0}.detail.full{grid-column:1/-1}.ue{font-weight:750;color:#8f3924}
     .no-results{display:none;text-align:center;color:var(--muted);padding:35px}
-    .next-note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 5px 5px 0;padding:11px 14px}.next-note p{margin:0}.next-note b{color:#6d4c0d}
     .footer{margin-top:28px;color:var(--muted);font-size:12px}.footer p{margin:5px 0}
     @media(max-width:900px){.hero{grid-template-columns:1fr}.hero-badges{justify-content:flex-start}.kpis{grid-template-columns:repeat(2,1fr)}.rule-band{grid-template-columns:1fr}.list{grid-template-columns:1fr}}
     @media(max-width:580px){.shell{padding:10px 9px 38px}.hero{padding:20px 16px}.hero h1{font-size:22px}.kpis{grid-template-columns:1fr 1fr}.kpi b{font-size:19px}.signal-wrap{overflow:auto}.signal-table{min-width:760px}.date-content{padding:0 9px 13px}.detail-grid{grid-template-columns:1fr}.detail.full{grid-column:auto}.seg{width:100%;display:grid;grid-template-columns:repeat(4,1fr)}.seg button{padding:8px 3px}.platform-select{width:100%}.item{padding:12px}.item-top{gap:7px}}
@@ -95,18 +94,26 @@
   <div class="platform-summary" aria-label="平台分布"><span>YouTube 40</span><span>Instagram 3</span><span>Meta 2</span><span>Google Play 3</span><span>App Store 2</span></div>
 
   <details class="date-block" open>
-    <summary><span class="date-chip">2026-08-19</span><b>模拟经营专项</b><span class="date-meta">最新日期在最前 · 50 条玩法与内容参考</span></summary>
+    <summary><span class="date-chip">2026-08-19</span><b>模拟经营专项</b><span class="date-meta">日本 44 · 台湾 4 · 香港 2</span></summary>
     <div class="date-content">
-      <div class="section-head"><span class="count paid">买量 30</span><h3>非写实模拟经营创意</h3></div>
-      <div id="paidList" class="list"></div>
-      <div class="section-head"><span class="count organic">自然 20</span><h3>近期高动量内容与改法</h3></div>
-      <div id="organicList" class="list"></div>
+      <section class="market-section" data-region="JP">
+        <div class="market-title"><h3><span class="market-name">日本</span>主市场</h3><span class="market-total">44 条 · 优先保证数量</span></div>
+        <div class="content-group"><div class="section-head"><span class="count paid">买量 28</span><h4>非写实模拟经营创意</h4></div><div id="jpPaidList" class="list"></div></div>
+        <div class="content-group"><div class="section-head"><span class="count organic">自然 16</span><h4>近期高动量内容与改法</h4></div><div id="jpOrganicList" class="list"></div></div>
+      </section>
+      <section class="market-section" data-region="TW">
+        <div class="market-title"><h3><span class="market-name tw">台湾</span>新增板块</h3><span class="market-total">4 条 · 日本完成后补充</span></div>
+        <div class="content-group"><div class="section-head"><span class="count paid">买量 1</span><h4>繁中买量创意</h4></div><div id="twPaidList" class="list"></div></div>
+        <div class="content-group"><div class="section-head"><span class="count organic">自然 3</span><h4>台湾自然内容</h4></div><div id="twOrganicList" class="list"></div></div>
+      </section>
+      <section class="market-section" data-region="HK">
+        <div class="market-title"><h3><span class="market-name hk">香港</span>新增板块</h3><span class="market-total">2 条 · 日本完成后补充</span></div>
+        <div class="content-group"><div class="section-head"><span class="count paid">买量 1</span><h4>香港买量创意</h4></div><div id="hkPaidList" class="list"></div></div>
+        <div class="content-group"><div class="section-head"><span class="count organic">自然 1</span><h4>香港自然内容</h4></div><div id="hkOrganicList" class="list"></div></div>
+      </section>
       <div id="noResults" class="no-results">没有匹配内容。</div>
     </div>
   </details>
-
-  <h2>三、今天优先</h2>
-  <aside class="next-note"><p><b>只先做 1 组：</b>“暴雪夜客栈温度归零”15 秒版；A 面先露红色温度计，B 面先露排队客人，统一用像素剖面场景，UE 占比 0–5%。</p></aside>
 
   <footer class="footer">
     <p>采集时间：2026-08-19（Asia/Shanghai）。播放、点赞、评分、评价量和广告活跃状态均为采集时平台公开值；任何单项都不等于广告转化。</p>
@@ -135,17 +142,17 @@ const paid = [
   {id:17,market:'JP',priority:'P1',style:'水彩像素',title:'雨天书车：今天带兵书还是菜谱？',game:'Tiny Bookshop',url:'https://www.youtube.com/watch?v=C_6FRDWyuZM',video:'C_6FRDWyuZM',signal:'Mobile Announcement 约 1,482 播放 · 1 个月前',hook:'天气预报“雨”，书车只能装 6 本。',beats:'选择库存→到达村口→客群出现→两类书销量差异→剩余库存折价→第二天调整。',ai:'水彩背景 + 像素物件；天气层、顾客层、书本层可独立生成。',assets:'书车、书 8、本地村口、顾客 4、雨层、销量 UI。',ab:'A 天气决定需求；B 节日决定需求。A 兵书/菜谱；B 地图/药书。',adapt:'做移动商队经营，弱化三国标签也能成立。',ue:'0%'},
   {id:18,market:'JP',priority:'P1',style:'黏土小镇',title:'旅店冬季改造：一晚多住 6 个客人',game:'Hotel Galactic',url:'https://www.youtube.com/watch?v=kqGV8rP-44Y',video:'kqGV8rP-44Y',signal:'冬季改造视频约 6,324 播放 · 8 个月前',hook:'门外排着六人，店内只有两张床。',beats:'拆仓房→铺床→加炉火→客人入住→早餐流水线→收益翻倍。',ai:'黏土材质、固定剖面机位；房间模块用遮罩增删。',assets:'客栈剖面、床 8、炉火、早餐桌、客人、收益牌。',ab:'A 扩床位；B 提升单价。A 满房；B 差评危机。',adapt:'完全以客栈经营为主，结尾才露出冰河世界。',ue:'0–5%'},
   {id:19,market:'JP',priority:'P1',style:'像素经理',title:'三场比赛之外：真正好看的其实是后台经营',game:'ぼくのプロ野球',url:'https://www.youtube.com/watch?v=dKt6kI49MsY',video:'dKt6kI49MsY',signal:'介绍 PV 约 7,554 播放 · 3 天前',hook:'胜率 20%，但问题不是队员，而是补给店亏损。',beats:'看周报→砍掉滞销品→调整训练/休息→士气上升→下一场结果跳变。',ai:'像素周报、员工卡和训练场；比赛只用 1 秒图标结算。',assets:'周报、补给店、训练场、员工 4、士气/利润 UI。',ab:'A 先经营后胜利；B 先惨败再复盘。A 数据派；B 剧情派。',adapt:'把战斗压成结算，把资源、人岗、后勤作为主体。',ue:'≤5%'},
-  {id:20,market:'TW/HK',priority:'P1',style:'剪纸低模',title:'同一间驿站，日文与繁中不是只换字幕',game:'Go-Go Town! / Town to City',url:'https://www.youtube.com/watch?v=6XqJOvzNX_w',video:'6XqJOvzNX_w',signal:'Release Date Trailer 约 1.5 万播放 · 2 个月前',hook:'A 面日区：深夜最后一位客人；B 面繁中：连续爆单仓库见底。',beats:'同一资产做两套开场；中段共用补货/服务/扩店；结尾分别强调细节完成感与效率爽感。',ai:'同一剪纸低模资产，替换人物表情、字幕密度和结果 UI。',assets:'驿站、顾客 6、库存架、货箱、两套字幕与 UI。',ab:'A 日本“丁寧な店づくり”；B 港台“爆单翻倍”。',adapt:'用同一经营玩法做真正不同的市场叙事，控制制作成本。',ue:'0%'},
+  {id:20,market:'HK',priority:'P1',style:'剪纸低模',title:'同一间驿站，日文与繁中不是只换字幕',game:'Go-Go Town! / Town to City',url:'https://www.youtube.com/watch?v=6XqJOvzNX_w',video:'6XqJOvzNX_w',signal:'Release Date Trailer 约 1.5 万播放 · 2 个月前',hook:'A 面日区：深夜最后一位客人；B 面繁中：连续爆单仓库见底。',beats:'同一资产做两套开场；中段共用补货/服务/扩店；结尾分别强调细节完成感与效率爽感。',ai:'同一剪纸低模资产，替换人物表情、字幕密度和结果 UI。',assets:'驿站、顾客 6、库存架、货箱、两套字幕与 UI。',ab:'A 日本“丁寧な店づくり”；B 港台“爆单翻倍”。',adapt:'用同一经营玩法做真正不同的市场叙事，控制制作成本。',ue:'0%'},
   {id:21,market:'JP',priority:'P0',platform:'Google Play',sourceKind:'store',style:'像素俯视',title:'暴雪便利驿：八种货只够补三格',game:'My Convenience Store',url:'https://play.google.com/store/apps/details?id=com.funple.game.mycon.g&hl=ja',signal:'Google Play 日区 3.6 分、约 6,350 条评价 · 2026-04-23 更新',hook:'门外排起队，热汤、草料、火把三个货架同时亮红。',beats:'扫一眼需求气泡→只选三箱补货→拖到货架→顾客分流→收银数字跳升→解锁后仓。',ai:'像素俯视店铺做缺货/满货两套状态，顾客用 4 帧循环；补货箱和数字 UI 后期叠加。',assets:'便利驿、货架 8、货箱 6、顾客 5、需求气泡、收银 UI。',ab:'A 三选一补货；B 自动补货但资金不足。A 先缺货；B 先排队。',adapt:'改成雪夜驿站补给铺，商品直接对应木材、药草、草料、火把；不出现现代便利店。',ue:'0%'},
   {id:22,market:'JP',priority:'P0',platform:'Google Play',sourceKind:'store',style:'纸雕剖面',title:'客栈房东：先修漏风窗还是先涨房租？',game:'Rent Please! Landlord Sim',url:'https://play.google.com/store/apps/details?id=com.shimmergames.tenants.gp&hl=ja',signal:'Google Play 日区 4.4 分、约 38.8 万条评价 · 2026-08-08 更新',hook:'三间房同时冒出“冷”，金币只够修一间。',beats:'查看住客需求→选房修窗→温度回升→收租→用租金加炉火→整层满意度翻绿。',ai:'纸雕客栈剖面固定机位，房间做冷/暖状态替换；住客只做走动、发抖、入睡三套循环。',assets:'三层客栈、房间 6、住客 6、窗/炉火模块、金币与满意度 UI。',ab:'A 修设施；B 降租安抚。A 单间特写；B 整层剖面。',adapt:'只借“需求—租金—升级”循环，角色和包装改成中性、克制的雪城住客管理。',ue:'0–5%'},
-  {id:23,market:'JP/TW',priority:'P1',platform:'Google Play',sourceKind:'store',style:'木版画像素',title:'一张订单卡住六座作坊：到底缺在哪一步？',game:'Sim Companies',url:'https://play.google.com/store/apps/details?id=com.simcompanies.simcompaniespwa&hl=ja',signal:'Google Play 4.5 分、约 3.44 万条评价 · 生产链经营页',hook:'军需订单倒计时 12 秒，六个工坊只有铁匠铺停摆。',beats:'点开链路→发现木炭不足→临时调车→铁锭出炉→武器装箱→利润覆盖扩建费用。',ai:'木版画纹理等距地图，资源流用粗线动画；作坊只需运行/停摆两状态。',assets:'作坊 6、仓库、马车、资源图标 8、订单卡、利润 UI。',ab:'A 找断点；B 先乱升级再纠错。A 订单压力；B 利润压力。',adapt:'把复杂 SLG 资源压成一条可视化供应链，让观众一眼找到断点。',ue:'≤5%'},
+  {id:23,market:'TW',priority:'P1',platform:'Google Play',sourceKind:'store',style:'木版画像素',title:'一张订单卡住六座作坊：到底缺在哪一步？',game:'Sim Companies',url:'https://play.google.com/store/apps/details?id=com.simcompanies.simcompaniespwa&hl=ja',signal:'Google Play 4.5 分、约 3.44 万条评价 · 生产链经营页',hook:'军需订单倒计时 12 秒，六个工坊只有铁匠铺停摆。',beats:'点开链路→发现木炭不足→临时调车→铁锭出炉→武器装箱→利润覆盖扩建费用。',ai:'木版画纹理等距地图，资源流用粗线动画；作坊只需运行/停摆两状态。',assets:'作坊 6、仓库、马车、资源图标 8、订单卡、利润 UI。',ab:'A 找断点；B 先乱升级再纠错。A 订单压力；B 利润压力。',adapt:'把复杂 SLG 资源压成一条可视化供应链，让观众一眼找到断点。',ue:'≤5%'},
   {id:24,market:'JP',priority:'P1',platform:'Instagram',sourceKind:'video',style:'像素近景',title:'旧物铺鉴价：这把破刀是废铁还是稀有货？',game:'Thrift Shop Simulator Reel',url:'https://www.instagram.com/reel/DV8xdiBu5L4/',signal:'Instagram Reel · 约 20 秒 · 5 个月前 · 互动量较小，仅作结构参考',hook:'标价 2 文的锈刀突然弹出“隐藏纹章”。',beats:'收货→擦拭→翻面发现纹章→选择普通价/收藏价→顾客反应→用利润扩一格展示柜。',ai:'像素道具近景 + 俯视小铺；物品旋转用 6 帧序列，鉴定光效和价格 UI 后期完成。',assets:'旧物铺、锈刀/盔甲/地图 6 件、展示柜、顾客 3、价格签。',ab:'A 先低价捡漏；B 先高价收错货。A 鉴定成功；B 假货翻车。',adapt:'改成驿站旧军械铺，主角经营判断而非战斗；保持中性硬朗，不做治愈杂货店。',ue:'0%'},
   {id:25,market:'JP',priority:'P0',platform:'Instagram',sourceKind:'video',style:'低多边形夜景',title:'最后一座驿站：午夜来客要水还是要马料？',game:'The Last Gas Station Reel',url:'https://www.instagram.com/reel/DY6azjIvbVq/',signal:'Instagram Reel · 120+ 赞 · 约 36 秒 · 2 个月前',hook:'雪夜只剩一盏灯，两支商队同时进站，仓库库存各剩 1。',beats:'看车队气泡→选先服务谁→打水/喂马→收取路费→被放弃的队伍降声望→升级第二个水槽。',ai:'低多边形夜间驿站，镜头固定在斜俯视；雪、灯光、马车循环分层合成。',assets:'驿站、水槽、草料棚、两支商队、库存/声望 UI、暴雪层。',ab:'A 资源二选一；B 服务顺序。A 安静悬疑；B 倒计时紧张。',adapt:'保留“偏远夜班站点”的孤立经营压力，去掉写实第一人称和现代加油站。',ue:'0–5%'},
   {id:26,market:'JP',priority:'P1',platform:'Instagram',sourceKind:'video',style:'黏土剖面',title:'酒店只剩一格：加床位还是加厨房？',game:'Hotel Architect Reel',url:'https://www.instagram.com/reel/DTdBBYNjR-c/',signal:'Instagram Reel · 20+ 赞 · 约 23 秒 · 7 个月前 · 结构参考',hook:'客栈剖面只剩一个空格，门外同时出现住客和饥饿图标。',beats:'拖入床位方案→收入预览；切到厨房方案→满意度预览；选择后快速施工→一晚结算→下一层解锁。',ai:'黏土模块化剖面，床/厨房直接换件；施工用遮挡烟尘连接首尾帧。',assets:'两层客栈、空房格、床模块、厨房模块、客人 5、结算 UI。',ab:'A 床位赚钱；B 厨房留客。A 先给选择；B 先给排队危机。',adapt:'把“酒店设计”改成雪城客栈空间规划，核心是有限格子的经营取舍。',ue:'0%'},
   {id:27,market:'JP',priority:'P0',platform:'Meta',sourceKind:'ad',style:'像素剖面',title:'炉火熄灭前 15 秒：先救温度还是先煮饭？',game:'Whiteout Survival Meta Ad',url:'https://www.facebook.com/ads/library/?id=2287178538489217',signal:'Meta 日区具体广告 ID · 2026-08-13 起投 · 可见多个版本',hook:'温度计归零，厨房和宿舍同时结冰。',beats:'拖木材进炉→温度回升一格→派一人煮汤→饥饿下降→居民恢复工作→拉远显示新房点亮。',ai:'像素剖面城固定机位，冰层/火光/居民动作独立生成；只用两个大指标。',assets:'剖面城、炉火、厨房、宿舍、居民 5、木材/温度/饥饿 UI。',ab:'A 先温度；B 先饥饿。A 红色警报；B 居民倒地。',adapt:'这是最贴三冰的经营母题，但必须把镜头中心放在人员与设施联动，结尾才承接主城。',ue:'0–5%'},
   {id:28,market:'JP',priority:'P0',platform:'Meta',sourceKind:'ad',style:'纸雕地图',title:'冰原搜集路线：三辆雪橇只能派两辆',game:'Whiteout Survival Meta Ad',url:'https://www.facebook.com/ads/library/?id=1021776857205624',signal:'Meta 日区具体广告 ID · 2026-06-18 起投 · 仍可在广告库查看',hook:'木材、食物、药草三个点同时告急，雪橇只剩两辆。',beats:'画两条路线→雪橇出发→暴雪封住近路→改走村落补给→资源入库→解锁第三辆雪橇。',ai:'纸雕地图 + 2D 路线动画；雪橇与暴雪做短循环，资源到仓用图标结算。',assets:'冰原地图、资源点 3、雪橇 3、村落、暴雪层、仓库 UI。',ab:'A 选错资源；B 路线被封。A 自由画线；B 三选二。',adapt:'把野外采集变成运输调度小游戏，战斗完全移除，重点是路线与库存反馈。',ue:'0%'},
   {id:29,market:'JP',priority:'P1',platform:'App Store',sourceKind:'store',style:'赛璐璐看板',title:'小作坊创业：第一笔钱该招人还是买机器？',game:'経営シミュレーション：起業 / Startup Simulator',url:'https://apps.apple.com/jp/app/%E7%B5%8C%E5%96%B6%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E8%B5%B7%E6%A5%AD/id6761575000',signal:'日本 App Store 具体页面 · 2026-08-08 新作 · 决策驱动公司成长',hook:'桌上只有 100 铜钱，订单要求一天做完 20 件货。',beats:'查看招人/机器两张卡→选一张→生产速度变化→交单→现金流转正或亏损→开启第二个岗位。',ai:'赛璐璐角色 + 像素工坊看板；生产过程用循环，决策卡和现金流用 2D 动效。',assets:'工坊、员工 3、机器 2、决策卡、订单、现金流 UI。',ab:'A 招人；B 买机器。A 成功开局；B 先失败再重来。',adapt:'改成雪城新作坊创业，不讲宏大政务，只讲第一笔钱如何让生产跑起来。',ue:'0%'},
-  {id:30,market:'JP/HK',priority:'P1',platform:'App Store',sourceKind:'store',style:'木版画酒馆',title:'酒馆今晚卖什么：库存、价格、客流三选二',game:'バー経営物語 / Bar Management Story',url:'https://apps.apple.com/jp/app/%E3%83%90%E3%83%BC%E7%B5%8C%E5%96%B6%E7%89%A9%E8%AA%9E/id6780888458',signal:'日本 App Store 具体页面 · 2026 年经营新作 · 库存/定价/获客循环',hook:'门外来了十人，酒桶只剩半桶，今日价格牌还没写。',beats:'定两档价格→选择兑水或限量→开门营业→顾客表情与排队变化→夜间结算→第二天进货。',ai:'木版画酒馆固定侧剖面，顾客分三类循环；酒量、价格、口碑用简洁图标反馈。',assets:'酒馆、吧台、酒桶 3、价格牌、顾客 10、口碑/库存/收益 UI。',ab:'A 高价限量；B 低价爆单。A 客流开场；B 空酒桶开场。',adapt:'改成雪城热汤馆或驿站食堂，避免写实食物特写，主打库存和定价。',ue:'0%'}
+  {id:30,market:'JP',priority:'P1',platform:'App Store',sourceKind:'store',style:'木版画酒馆',title:'酒馆今晚卖什么：库存、价格、客流三选二',game:'バー経営物語 / Bar Management Story',url:'https://apps.apple.com/jp/app/%E3%83%90%E3%83%BC%E7%B5%8C%E5%96%B6%E7%89%A9%E8%AA%9E/id6780888458',signal:'日本 App Store 具体页面 · 2026 年经营新作 · 库存/定价/获客循环',hook:'门外来了十人，酒桶只剩半桶，今日价格牌还没写。',beats:'定两档价格→选择兑水或限量→开门营业→顾客表情与排队变化→夜间结算→第二天进货。',ai:'木版画酒馆固定侧剖面，顾客分三类循环；酒量、价格、口碑用简洁图标反馈。',assets:'酒馆、吧台、酒桶 3、价格牌、顾客 10、口碑/库存/收益 UI。',ab:'A 高价限量；B 低价爆单。A 客流开场；B 空酒桶开场。',adapt:'改成雪城热汤馆或驿站食堂，避免写实食物特写，主打库存和定价。',ue:'0%'}
 ];
 
 const organic = [
@@ -168,7 +175,7 @@ const organic = [
   {id:37,market:'TW',priority:'P0',title:'20 款上瘾模拟经营手游',channel:'花現新大鹿 DoeDaDa',url:'https://www.youtube.com/watch?v=QkJz0_4-HQc',video:'QkJz0_4-HQc',signal:'约 4,744 播放 · 8 天前',why:'“上瘾”直接承诺循环强度，手游与经营双关键词清楚。',format:'每款只展示最上瘾的 6–8 秒操作。',adapt:'繁中内容标题用“越整理越順”的经营成就感，不使用女性向治愈话术。',test:'港台广告复用最高停留的操作片段。'},
   {id:38,market:'TW',priority:'P1',title:'2026 下半年 Switch 新作 25 款',channel:'狐狸牧場 foxranch',url:'https://www.youtube.com/watch?v=FQEbX-Bh2Dc',video:'FQEbX-Bh2Dc',signal:'约 13 万播放 · 1 个月前',why:'大档期清单自带收藏价值，标题有明确时间边界。',format:'用“经营类只看这 3 款”做二次垂直剪辑。',adapt:'三冰参与跨品类盘点时只讲非写实经营差异，不讲世界观。',test:'收藏率高于点赞率时，增加图表和清单资产。'},
   {id:39,market:'TW',priority:'P1',title:'7 月多人合作与单人游戏推荐',channel:'Kim和Nana的遊戲世界',url:'https://www.youtube.com/watch?v=ghwdoQtIvdA',video:'ghwdoQtIvdA',signal:'约 11 万播放 · 1 个月前',why:'把多人/单人并列，帮助观众快速找到自己的玩法场景。',format:'同一经营动作分别展示单人效率与合作混乱。',adapt:'自然内容做“一个人经营 vs 两人分工”，评论区选更想玩的版本。',test:'胜出版本进入对应受众广告组。'},
-  {id:40,market:'HK/TW',priority:'P0',title:'8 月新作：10+6 款精简清单',channel:'Kim和Nana的遊戲世界',url:'https://www.youtube.com/watch?v=DKWh2Bk7aiA',video:'DKWh2Bk7aiA',signal:'约 5.6 万播放 · 11 天前',why:'月份非常新，标题把多人和单人数量写清，点击前就能判断价值。',format:'开场先列今日筛选标准，再进入具体游戏。',adapt:'每月做繁中“经营玩法素材雷达”，展示 3 个细节并公开下一条制作选择。',test:'把自然投票最高细节做港台买量 B 面。'}
+  {id:40,market:'HK',priority:'P0',title:'8 月新作：10+6 款精简清单',channel:'Kim和Nana的遊戲世界',url:'https://www.youtube.com/watch?v=DKWh2Bk7aiA',video:'DKWh2Bk7aiA',signal:'约 5.6 万播放 · 11 天前',why:'月份非常新，标题把多人和单人数量写清，点击前就能判断价值。',format:'开场先列今日筛选标准，再进入具体游戏。',adapt:'每月做繁中“经营玩法素材雷达”，展示 3 个细节并公开下一条制作选择。',test:'把自然投票最高细节做港台买量 B 面。'}
 ];
 
 paid.forEach(x=>{x.platform ||= 'YouTube'; x.sourceKind ||= 'video';});
@@ -209,10 +216,15 @@ function organicCard(x){
     </div></article>`;
 }
 
-const paidList = document.getElementById('paidList');
-const organicList = document.getElementById('organicList');
-paidList.innerHTML = paid.map(paidCard).join('');
-organicList.innerHTML = organic.map(organicCard).join('');
+const regionLists = [
+  ['jpPaidList',paid.filter(x=>x.market==='JP'),paidCard],
+  ['jpOrganicList',organic.filter(x=>x.market==='JP'),organicCard],
+  ['twPaidList',paid.filter(x=>x.market==='TW'),paidCard],
+  ['twOrganicList',organic.filter(x=>x.market==='TW'),organicCard],
+  ['hkPaidList',paid.filter(x=>x.market==='HK'),paidCard],
+  ['hkOrganicList',organic.filter(x=>x.market==='HK'),organicCard]
+];
+regionLists.forEach(([id,items,renderer])=>{document.getElementById(id).innerHTML=items.map(renderer).join('');});
 
 let activeFilter='all';
 const search=document.getElementById('search');
@@ -226,6 +238,8 @@ function applyFilters(){
     const textOk=!term||card.dataset.search.toLowerCase().includes(term)||card.innerText.toLowerCase().includes(term);
     card.hidden=!(typeOk&&platformOk&&textOk); if(!card.hidden) visible++;
   });
+  document.querySelectorAll('.content-group').forEach(group=>{group.hidden=![...group.querySelectorAll('.item')].some(card=>!card.hidden);});
+  document.querySelectorAll('.market-section').forEach(section=>{section.hidden=![...section.querySelectorAll('.item')].some(card=>!card.hidden);});
   document.getElementById('noResults').style.display=visible?'none':'block';
 }
 filterButtons.forEach(btn=>btn.addEventListener('click',()=>{filterButtons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');activeFilter=btn.dataset.filter;applyFilters();}));
